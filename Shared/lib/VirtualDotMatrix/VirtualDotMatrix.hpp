@@ -20,7 +20,7 @@ Since we're on another platform with no concept of
 PROGMEM, we're blanking it out so we don't have to change
 the font sources.
 */
-#define PROGMEM __attribute__(())
+#define PROGMEM
 
 #endif /* VirtualDotMatrix_hpp */
 
