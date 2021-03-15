@@ -12,7 +12,7 @@ VirtualDotMatrix::VirtualDotMatrix(int16_t mW, int16_t mH, bool useBuffer)
 {
     if (useBuffer) {
         // initialize an internal pixel buffer
-        buffer = new uint32_t[mW * mH];
+        buffer = new int16_t[mW * mH];
     }
 }
 
