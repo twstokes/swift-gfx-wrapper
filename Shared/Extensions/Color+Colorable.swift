@@ -1,11 +1,4 @@
 #if os(iOS) || os(watchOS)
-//
-//  Color+Colorable.swift
-//  SwiftGFXWrapperExample
-//
-//  Created by Tanner W. Stokes on 3/14/21.
-//
-
 import Foundation
 import SwiftUI
 

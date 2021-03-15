@@ -1,10 +1,3 @@
-//
-//  SwiftGFXWrapperWatchOS.h
-//  SwiftGFXWrapperWatchOS
-//
-//  Created by Tanner W. Stokes on 2/27/21.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for SwiftGFXWrapperWatchOS.

@@ -1,10 +1,3 @@
-//
-//  FlipDotMatrixHeader.h
-//  Flipper
-//
-//  Created by Tanner W. Stokes on 12/30/20.
-//
-
 #ifndef VirtualDotMatrixWrapper_h
 #define VirtualDotMatrixWrapper_h
 #endif /* VirtualDotMatrixWrapper_h */

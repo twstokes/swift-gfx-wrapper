@@ -1,10 +1,3 @@
-//
-//  VirtualDotMatrix.cpp
-//  Flipper
-//
-//  Created by Tanner W. Stokes on 1/2/21.
-//
-
 #include "VirtualDotMatrix.hpp"
 
 VirtualDotMatrix::VirtualDotMatrix(int16_t mW, int16_t mH, bool useBuffer)

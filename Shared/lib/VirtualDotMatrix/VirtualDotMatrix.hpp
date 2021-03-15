@@ -1,10 +1,3 @@
-//
-//  VirtualDotMatrix.hpp
-//  Flipper
-//
-//  Created by Tanner W. Stokes on 1/2/21.
-//
-
 #include "Adafruit_GFX.h"
 
 #ifndef VirtualDotMatrix_hpp

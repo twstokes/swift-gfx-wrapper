@@ -1,10 +1,3 @@
-//
-//  SwiftGFXWrapperTests.swift
-//  SwiftGFXWrapperTests
-//
-//  Created by Tanner W. Stokes on 1/3/21.
-//
-
 import XCTest
 @testable import SwiftGFXWrapper
 

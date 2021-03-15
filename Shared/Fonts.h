@@ -1,10 +1,3 @@
-//
-//  Fonts.h
-//  SwiftGFXWrapper
-//
-//  Created by Tanner W. Stokes on 3/13/21.
-//
-
 #ifndef Fonts_h
 #define Fonts_h
 #endif /* Fonts_h */

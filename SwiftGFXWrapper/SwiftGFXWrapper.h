@@ -1,10 +1,3 @@
-//
-//  SwiftGFXWrapper.h
-//  SwiftGFXWrapper
-//
-//  Created by Tanner W. Stokes on 1/3/21.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for SwiftGFXWrapper.

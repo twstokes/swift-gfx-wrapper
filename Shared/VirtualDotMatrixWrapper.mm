@@ -1,10 +1,3 @@
-//
-//  VirtualDotMatrixWrapper.m
-//  Flipper
-//
-//  Created by Tanner W. Stokes on 12/30/20.
-//
-
 #import <Foundation/Foundation.h>
 
 #import "VirtualDotMatrix.hpp"

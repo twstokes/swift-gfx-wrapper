@@ -1,11 +1,4 @@
 #if os(iOS) || os(watchOS)
-//
-//  GFXColor.swift
-//  SwiftGFXWrapperExample
-//
-//  Created by Tanner W. Stokes on 3/10/21.
-//
-
 import Foundation
 import UIKit
 
