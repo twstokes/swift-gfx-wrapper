@@ -8,11 +8,11 @@ This is currently a WIP.
 
 This is a Swift -> Objective C -> C / C++ wrapper around the [Adafruit GFX library](https://github.com/adafruit/Adafruit-GFX-Library).
 
-## Why would you use this?
+## Why would you use it?
 
 - Prototyping for a device that runs the Adafruit GFX library (e.g. a NeoMatrix)
 - Generating the pixel buffer for a device that you want to push to
-- Playing with pixel graphics in an iOS / macOS environment
+- Playing with pixel graphics in an iOS / macOS / watchOS environment
 
 ## Getting started
 
