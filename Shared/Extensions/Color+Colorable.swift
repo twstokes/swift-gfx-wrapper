@@ -1,3 +1,4 @@
+#if os(iOS) || os(watchOS)
 //
 //  Color+Colorable.swift
 //  SwiftGFXWrapperExample
@@ -17,3 +18,4 @@ extension Color: Colorable {
         self.init(UIColor(int565))
     }
 }
+#endif

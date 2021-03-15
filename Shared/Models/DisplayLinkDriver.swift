@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 import UIKit
 
@@ -26,3 +27,4 @@ public class DisplayLinkDriver: GFXFrameDriver {
         frameBlock?()
     }
 }
+#endif

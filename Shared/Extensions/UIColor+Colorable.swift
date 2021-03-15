@@ -1,3 +1,4 @@
+#if os(iOS) || os(watchOS)
 //
 //  GFXColor.swift
 //  SwiftGFXWrapperExample
@@ -29,3 +30,4 @@ extension UIColor: Colorable {
         self.init(red: CGFloat(r) / 31, green: CGFloat(g) / 63, blue: CGFloat(b) / 31, alpha: 1)
     }
 }
+#endif
