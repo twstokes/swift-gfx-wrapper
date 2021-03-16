@@ -11,6 +11,11 @@
 
 // initialize the matrix with no internal buffer
 // convenient if just relying on the callback to draw pixels
+
+
+/// Initialize a matrix with no internal buffer.
+/// @param w Width of matrix.
+/// @param h Height of matrix.
 -(id)init:(NSInteger)w height:(NSInteger)h {
     self = [super init];
     if (self) {
@@ -19,6 +24,11 @@
     return self;
 }
 
+
+/// Initialize a matrix.
+/// @param w Width of matrix.
+/// @param h Height of matrix.
+/// @param b Use a pixel buffer.
 -(id)init:(NSInteger)w height:(NSInteger)h useBuffer:(BOOL)b {
     self = [super init];
     if (self) {
@@ -27,12 +37,16 @@
     return self;
 }
 
+
+/// Assigns a new matrix.
+/// @param newVal New matrix.
 -(void)setVirtualDotMatrix:(VirtualDotMatrix*)newVal {
     @synchronized(self) {
         delete _VirtualDotMatrix;
         _VirtualDotMatrix = newVal;
     }
 }
+
 
 -(VirtualDotMatrix*)VirtualDotMatrix {
     return _VirtualDotMatrix;
