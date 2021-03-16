@@ -84,16 +84,47 @@ public class GFXMatrix {
         }
     }
     
-    public func scrollText(text: String, color: Colorable, font: Font = Font.DefaultFont) {
+    /// Scrolls text in the middle of the matrix infinitely.
+    /// 
+    /// - Parameters:
+    ///   - text: String to output.
+    ///   - font: Font to use.
+    ///   - size: Font size.
+    ///   - color: Color to use.
+    ///   - verticalOffset: Vertical offset from middle.
+    public func scrollText(
+        text: String,
+        font: Font? = nil,
+        size: Int = 1,
+        color: Colorable? = nil,
+        verticalOffset: Int = 0
+    ) {
         flipDotMatrix.setTextWrap(false)
-        flipDotMatrix.setTextColor(color.to565())
-        flipDotMatrix.setFont(font)
+        flipDotMatrix.setTextSize(size)
+        
+        if let font = font {
+            flipDotMatrix.setFont(font)
+        }
+        
+        if let color = color {
+            flipDotMatrix.setTextColor(color.to565())
+        }
 
-        var x = self.cols
+        var x = cols
         var x1 = Int16(0), y1 = Int16(0), w = UInt16(0), h = UInt16(0)
         
-        self.flipDotMatrix.getTextBoundsPtr(text, x: x, y: 5, x1: &x1, y1: &y1, width: &w, height: &h)
+        self.flipDotMatrix.getTextBoundsPtr(text, x: x, y: flipDotMatrix.getCursorY(), x1: &x1, y1: &y1, width: &w, height: &h)
         
+        /*
+            compute the vertical middle taking into account that custom fonts use
+            a different baseline than the default font
+            
+            Adafruit docs:
+            For example, whereas the cursor position when printing with the classic font identified the top-left corner of
+            the character cell, with new fonts the cursor position indicates the baseline — the bottom-most row — of
+            subsequent text.
+        */
+        let verticalMiddle = flipDotMatrix.getCursorY() - Int(y1) + (rows / 2) - (Int(h) / 2)
         let width = Int(w)
         
         frameBlock = { [weak self] in
@@ -104,7 +135,7 @@ public class GFXMatrix {
             let m = self.flipDotMatrix
 
             self.clearPixels()
-            m.setCursor(x, height: 3)
+            m.setCursor(x, y: verticalMiddle + verticalOffset)
             m.print(text)
 
             x = x - 1

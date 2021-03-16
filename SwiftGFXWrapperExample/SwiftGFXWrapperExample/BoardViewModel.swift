@@ -12,7 +12,7 @@ class BoardViewModel {
         driver.setFrameBlock { [weak self] in
             self?.matrix.step()
         }
-        
-        self.matrix.scrollText(text: "Hello!", color: UIColor.green)
+                
+        self.matrix.scrollText(text: "Hello!", color: UIColor.orange)
     }
 }
