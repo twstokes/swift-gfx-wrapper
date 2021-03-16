@@ -53,7 +53,7 @@
 - (void) setTextSize:(NSInteger)s;
 - (void) setTextSizeXY:(NSInteger)sx sy:(NSInteger)sy;
 - (void) setFont:(Font)f;
-- (void) setCursor:(NSInteger)w height:(NSInteger)h;
+- (void) setCursor:(NSInteger)x y:(NSInteger)y;
 - (void) setTextColor:(NSInteger)c;
 - (void) setTextColor:(NSInteger)c background:(NSInteger)bg;
 - (void) setTextWrap:(bool)w;

@@ -369,8 +369,8 @@
     _VirtualDotMatrix->setFont(font);
 }
 
-- (void) setCursor:(NSInteger)w height:(NSInteger)h {
-    _VirtualDotMatrix->setCursor(NSInteger(w), NSInteger(h));
+- (void) setCursor:(NSInteger)x y:(NSInteger)y {
+    _VirtualDotMatrix->setCursor(NSInteger(x), NSInteger(y));
 }
 
 - (void) setTextColor:(NSInteger)c {
