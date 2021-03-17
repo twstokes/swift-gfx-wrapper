@@ -9,9 +9,6 @@
     VirtualDotMatrix * _VirtualDotMatrix;
 }
 
-// initialize the matrix with no internal buffer
-// convenient if just relying on the callback to draw pixels
-
 
 /// Initialize a matrix with no internal buffer.
 /// @param w Width of matrix.
