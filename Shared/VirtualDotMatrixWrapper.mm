@@ -159,22 +159,57 @@
 }
 
 
+/// Draw a circle outline.
+/// @param x0 Center-point x coordinate.
+/// @param y0 Center-point y coordinate.
+/// @param r Radius of circle.
+/// @param c 16-bit 5-6-5 Color to draw with.
 - (void) drawCircle:(NSInteger)x0 y0:(NSInteger)y0 radius:(NSInteger)r color:(NSInteger)c {
     _VirtualDotMatrix->drawCircle(x0, y0, r, c);
 }
 
+
+/// Quarter-circle drawer, used to do circles and roundrects.
+/// @param x0 Center-point x coordinate.
+/// @param y0 Center-point y coordinate.
+/// @param r Radius of circle.
+/// @param cornername Mask bit #1 or bit #2 to indicate which quarters of the circle we're doing.
+/// @param c 16-bit 5-6-5 Color to draw with.
 - (void) drawCircleHelper:(NSInteger)x0 y0:(NSInteger)y0 radius:(NSInteger)r cornername:(NSInteger)cornername color:(NSInteger)c {
     _VirtualDotMatrix->drawCircleHelper(x0, y0, r, cornername, c);
 }
 
+
+/// Draw a circle with filled color.
+/// @param x0 Center-point x coordinate.
+/// @param y0 Center-point y coordinate.
+/// @param r  Radius of circle.
+/// @param c 16-bit 5-6-5 Color to fill with.
 - (void) fillCircle:(NSInteger)x0 y0:(NSInteger)y0 radius:(NSInteger)r color:(NSInteger)c {
     _VirtualDotMatrix->fillCircle(x0, y0, r, c);
 }
 
+
+/// Quarter-circle drawer with fill, used for circles and roundrects.
+/// @param x0 Center-point x coordinate.
+/// @param y0 Center-point y coordinate.
+/// @param r Radius of circle.
+/// @param cornername Mask bits indicating which quarters we're doing.
+/// @param delta  Offset from center-point, used for round-rects.
+/// @param c 16-bit 5-6-5 Color to fill with.
 - (void) fillCircleHelper:(NSInteger)x0 y0:(NSInteger)y0 radius:(NSInteger)r cornername:(NSInteger)cornername delta:(NSInteger)delta color:(NSInteger)c {
     _VirtualDotMatrix->fillCircleHelper(x0, y0, r, cornername, delta, c);
 }
 
+
+/// Draw a triangle with no fill color.
+/// @param x0 Vertex #0 x coordinate.
+/// @param y0 Vertex #0 y coordinate.
+/// @param x1 Vertex #1 x coordinate.
+/// @param y1 Vertex #1 y coordinate.
+/// @param x2 Vertex #2 x coordinate.
+/// @param y2 Vertex #2 y coordinate.
+/// @param c 16-bit 5-6-5 Color to draw with.
 - (void) drawTriangle:(NSInteger)x0 y0:(NSInteger)y0 x1:(NSInteger)x1 y1:(NSInteger)y1 x2:(NSInteger)x2 y2:(NSInteger)y2 color:(NSInteger)c {
     _VirtualDotMatrix->drawTriangle(x0, y0, x1, y1, x2, y2, c);
 }
