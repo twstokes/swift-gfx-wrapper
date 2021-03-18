@@ -53,53 +53,111 @@
     delete _VirtualDotMatrix;
 }
 
+
+/// Start the matrix.
+/// @param selfPtr A pointer to the bridged Swift object.
+/// @param drawPixelCallback An optional pointer to a callback to fire when drawing an individual pixel.
 - (void) start:(const void *)selfPtr drawPixelCallback:(void (short, short, unsigned short, const void *))drawPixelCallback {
     _VirtualDotMatrix->start(selfPtr, drawPixelCallback);
 }
 
+
+/// Draws a pixel on the matrix.
+/// @param x X coordinate.
+/// @param y Y coordinate.
+/// @param c 16-bit 5-6-5 color.
 - (void) drawPixel:(NSInteger)x y:(NSInteger)y c:(NSInteger)c {
     _VirtualDotMatrix->drawPixel(int16_t(x), int16_t(y), uint16_t(c));
 }
 
+
+/// Gets pixel at specified coordinates.
+/// @param x X coordinate.
+/// @param y Y coordinate.
 - (NSInteger) getPixel:(NSInteger)x y:(NSInteger)y {
     return _VirtualDotMatrix->getPixel(int16_t(x), int16_t(y));
 }
 
+
+/// Print helper for write function.
 - (void) print:(NSString *)s {
     _VirtualDotMatrix->print(s.UTF8String);
 }
 
+
+/// Set rotation setting for display.
+/// @param r  0 through 3 corresponding to 4 cardinal rotations.
 - (void) setRotation:(NSInteger)r {
     _VirtualDotMatrix->setRotation(uint8_t(r));
 }
 
+
+/// Invert the display.
+/// @param i True if you want to invert, false to make 'normal'.
 - (void) invertDisplay:(bool)i {
     _VirtualDotMatrix->invertDisplay(i);
 }
 
+
+/// Speed optimized vertical line drawing.
+/// @param x Line horizontal start point.
+/// @param y Line vertical start point.
+/// @param h Length of vertical line to be drawn, including first point.
+/// @param c Color to fill with.
 - (void) drawFastVLine:(NSInteger)x y:(NSInteger)y height:(NSInteger)h color:(NSInteger)c {
     _VirtualDotMatrix->drawFastVLine(x, y, h, c);
 }
 
+
+/// Speed optimized horizontal line drawing.
+/// @param x Line horizontal start point.
+/// @param y Line vertical start point.
+/// @param w Length of horizontal line to be drawn, including 1st point.
+/// @param c Color 16-bit 5-6-5 Color to draw line with.
 - (void) drawFastHLine:(NSInteger)x y:(NSInteger)y width:(NSInteger)w color:(NSInteger)c {
     _VirtualDotMatrix->drawFastHLine(x, y, w, c);
 }
 
+
+/// Fill a rectangle completely with one color.
+/// @param x Top left corner x coordinate.
+/// @param y Top left corner y coordinate.
+/// @param w Width in pixels.
+/// @param h Height in pixels.
+/// @param c 16-bit 5-6-5 Color to fill with.
 - (void) fillRect:(NSInteger)x y:(NSInteger)y width:(NSInteger)w height:(NSInteger)h color:(NSInteger)c {
     _VirtualDotMatrix->fillRect(x, y, w, h, c);
 }
 
+
+/// Fill the screen completely with one color.!
+/// @param c 16-bit 5-6-5 Color to fill with.
 - (void) fillScreen:(int)c {
     _VirtualDotMatrix->fillScreen(c);
 }
 
+
+/// Draw a line.
+/// @param x0 Start point x coordinate.
+/// @param y0 Start point y coordinate.
+/// @param x1 End point x coordinate.
+/// @param y1 End point y coordinate.
+/// @param c 16-bit 5-6-5 Color to draw with.
 - (void) drawLine:(NSInteger)x0 y0:(NSInteger)y0 x1:(NSInteger)x1 y1:(NSInteger)y1 color:(NSInteger)c {
     _VirtualDotMatrix->drawLine(x0, y0, x1, y1, c);
 }
 
+
+/// Draw a rectangle with no fill color.
+/// @param x Top left corner x coordinate.
+/// @param y Top left corner y coordinate.
+/// @param w Width in pixels.
+/// @param h Height in pixels.
+/// @param c 16-bit 5-6-5 Color to draw with.
 - (void) drawRect:(NSInteger)x y:(NSInteger)y width:(NSInteger)w height:(NSInteger)h color:(NSInteger)c {
     _VirtualDotMatrix->drawRect(x, y, w, h, c);
 }
+
 
 - (void) drawCircle:(NSInteger)x0 y0:(NSInteger)y0 radius:(NSInteger)r color:(NSInteger)c {
     _VirtualDotMatrix->drawCircle(x0, y0, r, c);
