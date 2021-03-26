@@ -1,8 +1,7 @@
-#include "Adafruit_GFX.h"
-
 #ifndef VirtualDotMatrix_hpp
 #define VirtualDotMatrix_hpp
 
+#include "Adafruit_GFX.h"
 #include <stdio.h>
 
 /*
@@ -14,8 +13,6 @@ PROGMEM, we're blanking it out so we don't have to change
 the font sources.
 */
 #define PROGMEM
-
-#endif /* VirtualDotMatrix_hpp */
 
 typedef void (*DrawPixelCallback)(int16_t x, int16_t y, uint16_t color, const void *);
 
@@ -34,3 +31,5 @@ private:
     const void *swiftBoard;
     const uint8_t matrixWidth, matrixHeight;
 };
+
+#endif /* VirtualDotMatrix_hpp */

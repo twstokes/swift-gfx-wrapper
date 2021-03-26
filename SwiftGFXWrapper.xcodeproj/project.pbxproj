@@ -16,7 +16,7 @@
 		C3456FF425A27BE700618271 /* VirtualDotMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD447425A264200079D69E /* VirtualDotMatrix.cpp */; };
 		C3456FF725A27BED00618271 /* Print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD446F25A2641D0079D69E /* Print.cpp */; };
 		C3456FF825A27BED00618271 /* Printable.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447025A2641D0079D69E /* Printable.h */; };
-		C3456FF925A27BED00618271 /* Print.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.hpp */; };
+		C3456FF925A27BED00618271 /* Print.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.h */; };
 		C3456FFA25A27BED00618271 /* WString.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD446E25A2641D0079D69E /* WString.h */; };
 		C3456FFD25A27BFB00618271 /* gfxfont.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443025A2641A0079D69E /* gfxfont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3456FFE25A27BFB00618271 /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; };
@@ -103,7 +103,7 @@
 		C37A752825EAD8A2008F249E /* VirtualDotMatrix.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447325A264200079D69E /* VirtualDotMatrix.hpp */; };
 		C37A752C25EAD8A5008F249E /* VirtualDotMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD447425A264200079D69E /* VirtualDotMatrix.cpp */; };
 		C37A753025EAD8A9008F249E /* Printable.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447025A2641D0079D69E /* Printable.h */; };
-		C37A753125EAD8A9008F249E /* Print.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.hpp */; };
+		C37A753125EAD8A9008F249E /* Print.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.h */; };
 		C37A753225EAD8A9008F249E /* WString.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD446E25A2641D0079D69E /* WString.h */; };
 		C37A753325EAD8A9008F249E /* Print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD446F25A2641D0079D69E /* Print.cpp */; };
 		C37A753925EAD8B7008F249E /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; };
@@ -173,7 +173,7 @@
 		C39F752425EC11C700B9EACA /* WString.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD446E25A2641D0079D69E /* WString.h */; };
 		C39F752A25EC11CC00B9EACA /* Print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD446F25A2641D0079D69E /* Print.cpp */; };
 		C39F753025EC11CF00B9EACA /* Printable.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447025A2641D0079D69E /* Printable.h */; };
-		C39F753625EC11D200B9EACA /* Print.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.hpp */; };
+		C39F753625EC11D200B9EACA /* Print.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.h */; };
 		C39F753C25EC11D800B9EACA /* gfxfont.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443025A2641A0079D69E /* gfxfont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C39F754725EC11DE00B9EACA /* Adafruit_GFX.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443125A2641A0079D69E /* Adafruit_GFX.h */; };
 		C39F754D25EC11E400B9EACA /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; };
@@ -233,6 +233,9 @@
 		C3A7F11125FD7416009BD84B /* Fonts.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A7F10B25FD73F3009BD84B /* Fonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3A7F11725FD7418009BD84B /* Fonts.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A7F10B25FD73F3009BD84B /* Fonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3A7F11D25FD7418009BD84B /* Fonts.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A7F10B25FD73F3009BD84B /* Fonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3E7B449260E93E1007DE830 /* Arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E7B448260E93E1007DE830 /* Arduino.h */; };
+		C3E7B44A260E93E1007DE830 /* Arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E7B448260E93E1007DE830 /* Arduino.h */; };
+		C3E7B44B260E93E1007DE830 /* Arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E7B448260E93E1007DE830 /* Arduino.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,9 +345,10 @@
 		C3AD446E25A2641D0079D69E /* WString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WString.h; sourceTree = "<group>"; };
 		C3AD446F25A2641D0079D69E /* Print.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Print.cpp; sourceTree = "<group>"; };
 		C3AD447025A2641D0079D69E /* Printable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Printable.h; sourceTree = "<group>"; };
-		C3AD447125A2641D0079D69E /* Print.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Print.hpp; sourceTree = "<group>"; };
+		C3AD447125A2641D0079D69E /* Print.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Print.h; sourceTree = "<group>"; };
 		C3AD447325A264200079D69E /* VirtualDotMatrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VirtualDotMatrix.hpp; sourceTree = "<group>"; };
 		C3AD447425A264200079D69E /* VirtualDotMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualDotMatrix.cpp; sourceTree = "<group>"; };
+		C3E7B448260E93E1007DE830 /* Arduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arduino.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,10 +593,11 @@
 		C3AD446D25A2641D0079D69E /* inc */ = {
 			isa = PBXGroup;
 			children = (
-				C3AD446E25A2641D0079D69E /* WString.h */,
 				C3AD446F25A2641D0079D69E /* Print.cpp */,
+				C3AD447125A2641D0079D69E /* Print.h */,
 				C3AD447025A2641D0079D69E /* Printable.h */,
-				C3AD447125A2641D0079D69E /* Print.hpp */,
+				C3E7B448260E93E1007DE830 /* Arduino.h */,
+				C3AD446E25A2641D0079D69E /* WString.h */,
 			);
 			path = inc;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				C345700825A27C0700618271 /* FreeMonoBold12pt7b.h in Headers */,
 				C345702A25A27C0700618271 /* FreeSerifItalic9pt7b.h in Headers */,
 				C345702825A27C0700618271 /* FreeSerifBoldItalic12pt7b.h in Headers */,
+				C3E7B449260E93E1007DE830 /* Arduino.h in Headers */,
 				C345703125A27C0700618271 /* FreeMono12pt7b.h in Headers */,
 				C345703625A27C0700618271 /* Org_01.h in Headers */,
 				C345702725A27C0700618271 /* FreeSansBold24pt7b.h in Headers */,
@@ -639,7 +645,7 @@
 				C345700E25A27C0700618271 /* TomThumb.h in Headers */,
 				C345702D25A27C0700618271 /* FreeSansBoldOblique9pt7b.h in Headers */,
 				C345702025A27C0700618271 /* FreeMonoOblique12pt7b.h in Headers */,
-				C3456FF925A27BED00618271 /* Print.hpp in Headers */,
+				C3456FF925A27BED00618271 /* Print.h in Headers */,
 				C345700725A27C0700618271 /* FreeMonoBold9pt7b.h in Headers */,
 				C345701825A27C0700618271 /* FreeSans18pt7b.h in Headers */,
 				C345703525A27C0700618271 /* FreeMonoBoldOblique24pt7b.h in Headers */,
@@ -686,13 +692,14 @@
 				C37A757825EAD8D2008F249E /* FreeSerif24pt7b.h in Headers */,
 				C37A756625EAD8D2008F249E /* FreeMono12pt7b.h in Headers */,
 				C37A755125EAD8D2008F249E /* FreeSansOblique18pt7b.h in Headers */,
+				C3E7B44A260E93E1007DE830 /* Arduino.h in Headers */,
 				C37A753D25EAD8B7008F249E /* gfxfont.h in Headers */,
 				C37A755B25EAD8D2008F249E /* FreeSerifBoldItalic12pt7b.h in Headers */,
 				C37A757C25EAD8D2008F249E /* FreeMono9pt7b.h in Headers */,
 				C37A756125EAD8D2008F249E /* FreeSansBoldOblique12pt7b.h in Headers */,
 				C37A755925EAD8D2008F249E /* TomThumb.h in Headers */,
 				C37A756925EAD8D2008F249E /* FreeMono24pt7b.h in Headers */,
-				C37A753125EAD8A9008F249E /* Print.hpp in Headers */,
+				C37A753125EAD8A9008F249E /* Print.h in Headers */,
 				C37A755A25EAD8D2008F249E /* FreeMonoBold9pt7b.h in Headers */,
 				C37A755725EAD8D2008F249E /* FreeMonoBoldOblique24pt7b.h in Headers */,
 				C37A755D25EAD8D2008F249E /* FreeSansBoldOblique24pt7b.h in Headers */,
@@ -754,6 +761,7 @@
 				C39F757225EC11ED00B9EACA /* FreeSansBold24pt7b.h in Headers */,
 				C39F758B25EC11EE00B9EACA /* FreeSerifBoldItalic24pt7b.h in Headers */,
 				C39F757A25EC11ED00B9EACA /* FreeSerifBold18pt7b.h in Headers */,
+				C3E7B44B260E93E1007DE830 /* Arduino.h in Headers */,
 				C39F757025EC11ED00B9EACA /* FreeSansBoldOblique18pt7b.h in Headers */,
 				C39F756C25EC11ED00B9EACA /* FreeSerif18pt7b.h in Headers */,
 				C39F758925EC11EE00B9EACA /* FreeSerifItalic9pt7b.h in Headers */,
@@ -768,7 +776,7 @@
 				C39F757E25EC11ED00B9EACA /* FreeSansBold18pt7b.h in Headers */,
 				C39F756E25EC11ED00B9EACA /* FreeMono18pt7b.h in Headers */,
 				C39F756725EC11ED00B9EACA /* FreeSerifItalic24pt7b.h in Headers */,
-				C39F753625EC11D200B9EACA /* Print.hpp in Headers */,
+				C39F753625EC11D200B9EACA /* Print.h in Headers */,
 				C39F757625EC11ED00B9EACA /* FreeSerifBoldItalic18pt7b.h in Headers */,
 				C39F757925EC11ED00B9EACA /* FreeSans9pt7b.h in Headers */,
 				C39F758A25EC11EE00B9EACA /* FreeMono24pt7b.h in Headers */,
@@ -1131,6 +1139,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "ARDUINO=100";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1190,6 +1199,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "ARDUINO=100";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
