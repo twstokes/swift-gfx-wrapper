@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 /// `GFXFrameDriver` conformance for `DisplayLinkDriver`.
-public class DisplayLinkDriver: GFXFrameDriver {
+open class DisplayLinkDriver: GFXFrameDriver {
     private var displayLink: CADisplayLink?
     private var frameBlock: (() -> Void)?
     
@@ -15,15 +15,15 @@ public class DisplayLinkDriver: GFXFrameDriver {
         self.displayLink = displayLink
     }
     
-    public func setFrameRate(fps: Int) {
+    open func setFrameRate(fps: Int) {
         displayLink?.preferredFramesPerSecond = fps
     }
     
-    public func setFrameBlock(block: @escaping (() -> Void)) {
+    open func setFrameBlock(block: @escaping (() -> Void)) {
         frameBlock = block
     }
     
-    @objc func step() {
+    @objc open func step() {
         frameBlock?()
     }
 }

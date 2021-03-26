@@ -1,7 +1,7 @@
 import Foundation
 
 /// Subclassable matrix that uses the Adafruit GFX library to draw to an array of `GFXPixel`s.
-public class GFXMatrix {
+open class GFXMatrix {
     public let rows, cols: Int
     
     private lazy var pixels = (0..<cols*rows).map { _ in GFXPixel() }
@@ -52,7 +52,7 @@ public class GFXMatrix {
     }
     
     // MARK: Public functions
-    public func getPixelAt(row: Int, col: Int) -> GFXPixel? {
+    open func getPixelAt(row: Int, col: Int) -> GFXPixel? {
         let idx = row*cols + col
 
         guard idx >= 0, idx < self.rows * self.cols else {
@@ -64,12 +64,12 @@ public class GFXMatrix {
     
     // a step is a complete frame, typically driven by
     // a timing device (e.g. DisplayLink)
-    public func step() {
+    open func step() {
         self.frameBlock?()
     }
     
     // MARK: Graphics routines
-    public func flipFlop() {
+    open func flipFlop() {
         var flipped = false
         
         frameBlock = { [weak self] in
@@ -92,7 +92,7 @@ public class GFXMatrix {
     ///   - size: Font size.
     ///   - color: Color to use.
     ///   - verticalOffset: Vertical offset from middle.
-    public func scrollText(
+    open func scrollText(
         text: String,
         font: Font? = nil,
         size: Int = 1,
