@@ -1,7 +1,7 @@
 import Foundation
 
 /*
-    convenience generic functions for bridging to / from C / C++ to Swift
+    convenience generic functions for bridging C / C++ to Swift
 */
 
 func bridge<T : AnyObject>(obj : T) -> UnsafeRawPointer {
