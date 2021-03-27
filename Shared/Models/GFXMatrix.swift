@@ -42,7 +42,7 @@ open class GFXMatrix {
         self.previousPixels.append(dot)
     }
     
-    private func clearPixels() {
+    open func clearPixels() {
         self.previousPixels.forEach { $0.color = 0 }
         self.previousPixels.removeAll()
     }
