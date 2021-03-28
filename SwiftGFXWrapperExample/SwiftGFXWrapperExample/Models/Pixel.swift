@@ -1,6 +1,6 @@
 import Foundation
 
-/// Observable pixel driven by a GFXBoard.
+/// Observable pixel drawn by a GFXMatrix.
 class Pixel: ObservableObject, Identifiable {   
     @Published var color: Int = 0
 }
