@@ -3,16 +3,16 @@ import SwiftUI
 import SwiftGFXWrapper
 
 struct BoardView: View {
-    private let vm = BoardViewModel(rows: 16, cols: 32, driver: DisplayLinkDriver())
+    private let vm = BoardViewModel(rows: 16, cols: 32)
 
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: geo.size.width * 0.005) {
                 Spacer()
-                ForEach((0..<vm.matrix.rows), id: \.self) { row in
+                ForEach((0..<vm.rows)) { row in
                     HStack(spacing: geo.size.width * 0.005) {
-                        ForEach((0..<vm.matrix.cols), id: \.self) { col in
-                            if let pixel = vm.matrix.getPixelAt(row: row, col: col) {
+                        ForEach((0..<vm.cols)) { col in
+                            if let pixel = vm.getPixelAt(row: row, col: col) {
                                 PixelView(pixel: pixel)
                             }
                         }

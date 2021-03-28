@@ -1,15 +1,17 @@
 #include "VirtualDotMatrix.hpp"
 
 VirtualDotMatrix::VirtualDotMatrix(int16_t mW, int16_t mH, bool useBuffer)
-    : Adafruit_GFX(mW, mH), matrixWidth(mW), matrixHeight(mH), buffer(NULL), drawPixelCallback(NULL), swiftBoard(NULL)
-{
-    if (useBuffer) {
-        // initialize an internal pixel buffer
-        buffer = new int16_t[mW * mH];
-    }
+    : Adafruit_GFX(mW, mH), buffer(NULL), drawPixelCallback(NULL), swiftBoard(NULL) {
+        if (useBuffer) {
+            // initialize an internal pixel buffer
+            buffer = new int16_t[mW * mH];
+        }
 }
 
-void VirtualDotMatrix::start(const void *sb = NULL, DrawPixelCallback cb = NULL)
+/*
+    set the drawing callbacks (if provided) and fill the screen with black
+*/
+void VirtualDotMatrix::start(const void * sb = NULL, DrawPixelCallback cb = NULL)
 {
     if (cb != NULL) {
         drawPixelCallback = cb;
@@ -28,15 +30,15 @@ void VirtualDotMatrix::start(const void *sb = NULL, DrawPixelCallback cb = NULL)
 */
 void VirtualDotMatrix::drawPixel(int16_t x, int16_t y, uint16_t color)
 {
-    if (x < 0 || x >= matrixWidth ||
-        y < 0 || y >= matrixHeight)
+    if (x < 0 || x >= width() ||
+        y < 0 || y >= height())
     {
         // out of bounds
         return;
     }
 
     if (buffer != NULL) {
-        buffer[y*matrixWidth + x] = color;
+        buffer[y*width() + x] = color;
     }
 
     if (drawPixelCallback != NULL && swiftBoard != NULL) {
@@ -54,13 +56,13 @@ uint16_t VirtualDotMatrix::getPixel(int16_t x, int16_t y) {
     if (buffer == NULL) {
         return 0;
     }
-    
-    if (x < 0 || x >= matrixWidth ||
-        y < 0 || y >= matrixHeight)
+
+    if (x < 0 || x >= width() ||
+        y < 0 || y >= height())
     {
         // out of bounds
         return 0;
     }
-    
-    return buffer[y*matrixWidth + x];   
+
+    return buffer[y*width() + x];
 }

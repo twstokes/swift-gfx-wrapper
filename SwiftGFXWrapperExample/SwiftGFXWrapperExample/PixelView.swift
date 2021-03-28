@@ -3,7 +3,7 @@ import SwiftUI
 import SwiftGFXWrapper
 
 struct PixelView: View {
-    @ObservedObject var pixel: GFXPixel
+    @ObservedObject var pixel: Pixel
 
     var body: some View {
         Rectangle()
@@ -14,8 +14,8 @@ struct PixelView: View {
 }
 
 struct PixelView_Previews: PreviewProvider {
-    static let pixel: GFXPixel = {
-        let p = GFXPixel()
+    static let pixel: Pixel = {
+        let p = Pixel()
         p.color = Color.red.to565()
         return p
     }()

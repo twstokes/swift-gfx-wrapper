@@ -57,7 +57,7 @@
 /// Start the matrix.
 /// @param selfPtr A pointer to the bridged Swift object.
 /// @param drawPixelCallback An optional pointer to a callback to fire when drawing an individual pixel.
-- (void) start:(const void *)selfPtr drawPixelCallback:(void (short, short, unsigned short, const void *))drawPixelCallback {
+- (void) start:(const void *)selfPtr drawPixelCallback:(const void (short, short, unsigned short, const void *))drawPixelCallback {
     _VirtualDotMatrix->start(selfPtr, drawPixelCallback);
 }
 
@@ -66,7 +66,7 @@
 /// @param x X coordinate.
 /// @param y Y coordinate.
 /// @param c 16-bit 5-6-5 color.
-- (void) drawPixel:(NSInteger)x y:(NSInteger)y c:(NSInteger)c {
+- (void) drawPixel:(NSInteger)x y:(NSInteger)y color:(NSInteger)c {
     _VirtualDotMatrix->drawPixel(int16_t(x), int16_t(y), uint16_t(c));
 }
 

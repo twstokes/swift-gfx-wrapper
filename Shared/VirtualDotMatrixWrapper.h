@@ -14,8 +14,8 @@
 
 - (id)init:(NSInteger)w height:(NSInteger)h;
 - (id)init:(NSInteger)w height:(NSInteger)h useBuffer:(BOOL)b;
-- (void) start:(const void *)selfPtr drawPixelCallback:(void (short, short, unsigned short, const void *))drawPixelCallback;
-- (void) drawPixel:(NSInteger)x y:(NSInteger)y c:(NSInteger)c;
+- (void) start:(const void *)selfPtr drawPixelCallback:(const void (short, short, unsigned short, const void *))drawPixelCallback;
+- (void) drawPixel:(NSInteger)x y:(NSInteger)y color:(NSInteger)c;
 - (NSInteger) getPixel:(NSInteger)x y:(NSInteger)y;
 - (void) print:(NSString *)s;
 - (void) setRotation:(NSInteger)r;

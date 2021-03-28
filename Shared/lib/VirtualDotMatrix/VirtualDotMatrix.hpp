@@ -14,7 +14,7 @@ the font sources.
 */
 #define PROGMEM
 
-typedef void (*DrawPixelCallback)(int16_t x, int16_t y, uint16_t color, const void *);
+typedef const void (*DrawPixelCallback)(int16_t x, int16_t y, uint16_t color, const void *);
 
 class VirtualDotMatrix : public Adafruit_GFX
 {
@@ -29,7 +29,6 @@ private:
     int16_t *buffer;
     DrawPixelCallback drawPixelCallback;
     const void *swiftBoard;
-    const uint8_t matrixWidth, matrixHeight;
 };
 
 #endif /* VirtualDotMatrix_hpp */

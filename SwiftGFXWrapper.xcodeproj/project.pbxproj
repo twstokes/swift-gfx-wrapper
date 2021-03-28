@@ -83,18 +83,15 @@
 		C36EBE3A25FEF06C0047C6F7 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2D25FEF06C0047C6F7 /* Bridge.swift */; };
 		C36EBE3B25FEF06C0047C6F7 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2D25FEF06C0047C6F7 /* Bridge.swift */; };
 		C36EBE3C25FEF06C0047C6F7 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2D25FEF06C0047C6F7 /* Bridge.swift */; };
-		C36EBE3D25FEF06C0047C6F7 /* FrameDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2F25FEF06C0047C6F7 /* FrameDriver.swift */; };
-		C36EBE3E25FEF06C0047C6F7 /* FrameDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2F25FEF06C0047C6F7 /* FrameDriver.swift */; };
-		C36EBE3F25FEF06C0047C6F7 /* FrameDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2F25FEF06C0047C6F7 /* FrameDriver.swift */; };
+		C36EBE3D25FEF06C0047C6F7 /* GFXFrameDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2F25FEF06C0047C6F7 /* GFXFrameDriver.swift */; };
+		C36EBE3E25FEF06C0047C6F7 /* GFXFrameDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2F25FEF06C0047C6F7 /* GFXFrameDriver.swift */; };
+		C36EBE3F25FEF06C0047C6F7 /* GFXFrameDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE2F25FEF06C0047C6F7 /* GFXFrameDriver.swift */; };
 		C36EBE4025FEF06C0047C6F7 /* DisplayLinkDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3025FEF06C0047C6F7 /* DisplayLinkDriver.swift */; };
 		C36EBE4125FEF06C0047C6F7 /* DisplayLinkDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3025FEF06C0047C6F7 /* DisplayLinkDriver.swift */; };
 		C36EBE4225FEF06C0047C6F7 /* DisplayLinkDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3025FEF06C0047C6F7 /* DisplayLinkDriver.swift */; };
 		C36EBE4325FEF06C0047C6F7 /* GFXMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3125FEF06C0047C6F7 /* GFXMatrix.swift */; };
 		C36EBE4425FEF06C0047C6F7 /* GFXMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3125FEF06C0047C6F7 /* GFXMatrix.swift */; };
 		C36EBE4525FEF06C0047C6F7 /* GFXMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3125FEF06C0047C6F7 /* GFXMatrix.swift */; };
-		C36EBE4625FEF06C0047C6F7 /* GFXPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3225FEF06C0047C6F7 /* GFXPixel.swift */; };
-		C36EBE4725FEF06C0047C6F7 /* GFXPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3225FEF06C0047C6F7 /* GFXPixel.swift */; };
-		C36EBE4825FEF06C0047C6F7 /* GFXPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3225FEF06C0047C6F7 /* GFXPixel.swift */; };
 		C36EBE4925FEF06C0047C6F7 /* Colorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3325FEF06C0047C6F7 /* Colorable.swift */; };
 		C36EBE4A25FEF06C0047C6F7 /* Colorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3325FEF06C0047C6F7 /* Colorable.swift */; };
 		C36EBE4B25FEF06C0047C6F7 /* Colorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EBE3325FEF06C0047C6F7 /* Colorable.swift */; };
@@ -236,6 +233,9 @@
 		C3E7B449260E93E1007DE830 /* Arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E7B448260E93E1007DE830 /* Arduino.h */; };
 		C3E7B44A260E93E1007DE830 /* Arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E7B448260E93E1007DE830 /* Arduino.h */; };
 		C3E7B44B260E93E1007DE830 /* Arduino.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E7B448260E93E1007DE830 /* Arduino.h */; };
+		C3E7B4E6260FDA87007DE830 /* GFXMatrix+Routines.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7B4E5260FDA87007DE830 /* GFXMatrix+Routines.swift */; };
+		C3E7B4E7260FDA87007DE830 /* GFXMatrix+Routines.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7B4E5260FDA87007DE830 /* GFXMatrix+Routines.swift */; };
+		C3E7B4E8260FDA87007DE830 /* GFXMatrix+Routines.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7B4E5260FDA87007DE830 /* GFXMatrix+Routines.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,10 +267,9 @@
 		C36EBE2A25FEF06C0047C6F7 /* UIColor+Colorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colorable.swift"; sourceTree = "<group>"; };
 		C36EBE2B25FEF06C0047C6F7 /* Color+Colorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Colorable.swift"; sourceTree = "<group>"; };
 		C36EBE2D25FEF06C0047C6F7 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
-		C36EBE2F25FEF06C0047C6F7 /* FrameDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameDriver.swift; sourceTree = "<group>"; };
+		C36EBE2F25FEF06C0047C6F7 /* GFXFrameDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFXFrameDriver.swift; sourceTree = "<group>"; };
 		C36EBE3025FEF06C0047C6F7 /* DisplayLinkDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkDriver.swift; sourceTree = "<group>"; };
 		C36EBE3125FEF06C0047C6F7 /* GFXMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFXMatrix.swift; sourceTree = "<group>"; };
-		C36EBE3225FEF06C0047C6F7 /* GFXPixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFXPixel.swift; sourceTree = "<group>"; };
 		C36EBE3325FEF06C0047C6F7 /* Colorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colorable.swift; sourceTree = "<group>"; };
 		C37A750E25EAD87F008F249E /* SwiftGFXWrapperWatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGFXWrapperWatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37A751025EAD87F008F249E /* SwiftGFXWrapperWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGFXWrapperWatchOS.h; sourceTree = "<group>"; };
@@ -349,6 +348,7 @@
 		C3AD447325A264200079D69E /* VirtualDotMatrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VirtualDotMatrix.hpp; sourceTree = "<group>"; };
 		C3AD447425A264200079D69E /* VirtualDotMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualDotMatrix.cpp; sourceTree = "<group>"; };
 		C3E7B448260E93E1007DE830 /* Arduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arduino.h; sourceTree = "<group>"; };
+		C3E7B4E5260FDA87007DE830 /* GFXMatrix+Routines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GFXMatrix+Routines.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +450,7 @@
 			children = (
 				C36EBE2B25FEF06C0047C6F7 /* Color+Colorable.swift */,
 				C36EBE2A25FEF06C0047C6F7 /* UIColor+Colorable.swift */,
+				C3E7B4E5260FDA87007DE830 /* GFXMatrix+Routines.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,9 +468,8 @@
 			children = (
 				C36EBE3325FEF06C0047C6F7 /* Colorable.swift */,
 				C36EBE3025FEF06C0047C6F7 /* DisplayLinkDriver.swift */,
-				C36EBE2F25FEF06C0047C6F7 /* FrameDriver.swift */,
+				C36EBE2F25FEF06C0047C6F7 /* GFXFrameDriver.swift */,
 				C36EBE3125FEF06C0047C6F7 /* GFXMatrix.swift */,
-				C36EBE3225FEF06C0047C6F7 /* GFXPixel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1010,9 +1010,9 @@
 				C3456FFE25A27BFB00618271 /* glcdfont.c in Sources */,
 				C36EBE4025FEF06C0047C6F7 /* DisplayLinkDriver.swift in Sources */,
 				C36EBE3725FEF06C0047C6F7 /* Color+Colorable.swift in Sources */,
-				C36EBE4625FEF06C0047C6F7 /* GFXPixel.swift in Sources */,
 				C3456FF725A27BED00618271 /* Print.cpp in Sources */,
-				C36EBE3D25FEF06C0047C6F7 /* FrameDriver.swift in Sources */,
+				C3E7B4E6260FDA87007DE830 /* GFXMatrix+Routines.swift in Sources */,
+				C36EBE3D25FEF06C0047C6F7 /* GFXFrameDriver.swift in Sources */,
 				C36EBE4325FEF06C0047C6F7 /* GFXMatrix.swift in Sources */,
 				C36EBE3A25FEF06C0047C6F7 /* Bridge.swift in Sources */,
 				C36EBE3425FEF06C0047C6F7 /* UIColor+Colorable.swift in Sources */,
@@ -1038,9 +1038,9 @@
 				C37A753925EAD8B7008F249E /* glcdfont.c in Sources */,
 				C36EBE4125FEF06C0047C6F7 /* DisplayLinkDriver.swift in Sources */,
 				C36EBE3825FEF06C0047C6F7 /* Color+Colorable.swift in Sources */,
-				C36EBE4725FEF06C0047C6F7 /* GFXPixel.swift in Sources */,
 				C37A759325EAD9A6008F249E /* VirtualDotMatrixWrapper.mm in Sources */,
-				C36EBE3E25FEF06C0047C6F7 /* FrameDriver.swift in Sources */,
+				C3E7B4E7260FDA87007DE830 /* GFXMatrix+Routines.swift in Sources */,
+				C36EBE3E25FEF06C0047C6F7 /* GFXFrameDriver.swift in Sources */,
 				C36EBE4425FEF06C0047C6F7 /* GFXMatrix.swift in Sources */,
 				C36EBE3B25FEF06C0047C6F7 /* Bridge.swift in Sources */,
 				C36EBE3525FEF06C0047C6F7 /* UIColor+Colorable.swift in Sources */,
@@ -1058,9 +1058,9 @@
 				C39F754D25EC11E400B9EACA /* glcdfont.c in Sources */,
 				C36EBE4225FEF06C0047C6F7 /* DisplayLinkDriver.swift in Sources */,
 				C36EBE3925FEF06C0047C6F7 /* Color+Colorable.swift in Sources */,
-				C36EBE4825FEF06C0047C6F7 /* GFXPixel.swift in Sources */,
 				C39F752A25EC11CC00B9EACA /* Print.cpp in Sources */,
-				C36EBE3F25FEF06C0047C6F7 /* FrameDriver.swift in Sources */,
+				C3E7B4E8260FDA87007DE830 /* GFXMatrix+Routines.swift in Sources */,
+				C36EBE3F25FEF06C0047C6F7 /* GFXFrameDriver.swift in Sources */,
 				C36EBE4525FEF06C0047C6F7 /* GFXMatrix.swift in Sources */,
 				C36EBE3C25FEF06C0047C6F7 /* Bridge.swift in Sources */,
 				C36EBE3625FEF06C0047C6F7 /* UIColor+Colorable.swift in Sources */,
