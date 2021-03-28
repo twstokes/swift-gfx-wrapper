@@ -49,12 +49,12 @@ struct BoardViewModel {
     
     func getPixelAt(row: Int, col: Int) -> Pixel? {
         let idx = row*matrix.width() + col
-
-        guard idx >= 0, idx < matrix.height() * matrix.width() else {
+        
+        guard buffer.indices.contains(idx) else {
             return nil
         }
 
-        return self.buffer[idx]
+        return buffer[idx]
     }
     
     private func bouncyBox() {
