@@ -6,11 +6,12 @@ import UIKit
 open class DisplayLinkDriver: GFXFrameDriver {
     private var displayLink: CADisplayLink?
     private var stepBlock: (() -> Void)?
+    
+    private var running = false
         
     public init() {
         let displayLink = CADisplayLink(target: self, selector: #selector(step))
         displayLink.preferredFramesPerSecond = 10
-        
         
         self.displayLink = displayLink
     }
@@ -24,7 +25,12 @@ open class DisplayLinkDriver: GFXFrameDriver {
     }
     
     open func start() {
+        guard !running else {
+            return
+        }
+        
         displayLink?.add(to: .current, forMode: .common)
+        running = true
     }
     
     open func pause() {
@@ -36,8 +42,13 @@ open class DisplayLinkDriver: GFXFrameDriver {
     }
     
     open func stop() {
+        guard running else {
+            return
+        }
+        
         stepBlock = nil
-        displayLink?.remove(from: .current, forMode: .common)
+        displayLink?.invalidate()
+        running = false
     }
     
     @objc private func step() {
