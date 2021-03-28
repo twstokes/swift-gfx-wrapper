@@ -16,11 +16,11 @@ struct BoardViewModel {
     }
     
     init(rows: Int, cols: Int) {
-        // a buffer to track all of our pixels
-        self.buffer = (0..<cols*rows).map { _ in Pixel() }
+        // a buffer to track our pixel state
+        buffer = (0..<cols*rows).map { _ in Pixel() }
         
-        // this is the closure that "draws" to the data structure tracking the pixel buffer
-        self.matrix = GFXMatrix(rows: rows, cols: cols)
+        // create a new matrix
+        matrix = GFXMatrix(rows: rows, cols: cols)
         
         // set the function that's fired on every pixel draw
         matrix.setDrawCallback { [self] x, y, color in
@@ -41,7 +41,7 @@ struct BoardViewModel {
         matrix.scrollText(text: "Hello!", color: UIColor.orange)
         
         // example of a local graphics routine to manipulate the matrix
-        // bouncyBoxes()
+        // bouncyBox()
         
         // start the driver
         driver.start()
@@ -57,7 +57,7 @@ struct BoardViewModel {
         return self.buffer[idx]
     }
     
-    private func bouncyBoxes() {
+    private func bouncyBox() {
         var x = 0
         var y = 0
         var addingX = true
