@@ -3,7 +3,7 @@ import UIKit
 
 import SwiftGFXWrapper
 
-class BoardViewModel {
+struct BoardViewModel {
     private let matrix: GFXMatrix
     private let buffer: [Pixel]
     
@@ -16,19 +16,21 @@ class BoardViewModel {
     }
     
     init(rows: Int, cols: Int) {
-        let buffer = (0..<cols*rows).map { _ in Pixel() }
+        // a buffer to track all of our pixels
+        self.buffer = (0..<cols*rows).map { _ in Pixel() }
         
         // this is the closure that "draws" to the data structure tracking the pixel buffer
-        self.matrix = GFXMatrix(rows: rows, cols: cols) { x, y, color in
-            let dot = buffer[x + y * cols]
-            
-            // increase performance by doing minimal work
-            if dot.color != color {
-                dot.color = color
-            }
-        }
+        self.matrix = GFXMatrix(rows: rows, cols: cols)
         
-        self.buffer = buffer
+        // set the function that's fired on every pixel draw
+        matrix.setDrawCallback { [self] x, y, color in
+           let dot = buffer[x + y * cols]
+           
+           // increase performance by doing minimal work
+           if dot.color != color {
+               dot.color = color
+           }
+        }
         
         // use a frame driver to handle the timing of each frame
         let driver = DisplayLinkDriver()
@@ -61,7 +63,7 @@ class BoardViewModel {
         var addingX = true
         var addingY = true
         
-        matrix.setFrameBlock { [unowned self] in
+        matrix.setFrameBlock {
             matrix.fillScreen(0)
             matrix.drawPixel(x, y: y, color: UIColor.green.to565())
             

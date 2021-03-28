@@ -15,15 +15,15 @@ open class GFXMatrix: VirtualDotMatrixWrapper {
     // of a single frame
     private var drawCallback: DrawCallback?
     
-    public init(rows: Int, cols: Int, drawCallback: @escaping (DrawCallback)) {
-        self.drawCallback = drawCallback
+    public init(rows: Int, cols: Int) {
         super.init(cols, height: rows)
         
         // since we can't capture context with closures passed to C,
         // we have to pass a `const void *` that is a pointer to this object (selfPtr)
         let selfPtr = bridge(obj: self)
 
-        // this callback serves as syntatic sugar for the `drawCallback`
+        // this callback serves as syntactic sugar for the `drawCallback`
+        // so that Swift callers don't have to deal with bridging
         start(selfPtr) { x, y, c, selfPtr in
             guard let selfPtr = selfPtr else {
                 fatalError()
@@ -32,6 +32,12 @@ open class GFXMatrix: VirtualDotMatrixWrapper {
             let matrixSelf: GFXMatrix = bridge(ptr: selfPtr)
             matrixSelf.drawCallback?(Int(x), Int(y), Int(c))
         }
+    }
+    
+    // set a new block to run when an individual pixel is drawn
+    // set to nil to clear the draw block
+    public func setDrawCallback(_ block: DrawCallback?) {
+        drawCallback = block
     }
     
     // set a new block to run when the frame is computed
