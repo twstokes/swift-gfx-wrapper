@@ -60,8 +60,8 @@ struct BoardViewModel {
     private func bouncyBox() {
         var x = 0
         var y = 0
-        var addingX = true
-        var addingY = true
+        var addingX = false
+        var addingY = false
         
         matrix.setFrameBlock {
             matrix.fillScreen(0)
@@ -75,8 +75,8 @@ struct BoardViewModel {
                 addingY.toggle()
             }
             
-            x = addingX ? x-1 : x+1
-            y = addingY ? y-1 : y+1
+            x = addingX ? x+1 : x-1
+            y = addingY ? y+1 : y-1
         }
     }
 }
