@@ -24,6 +24,9 @@ An example project is included in this library to get started. SwiftUI is option
 - macOS 11+
 - watchOS 7.2+
 
+### Initialize Git submodules
+`git submodule update --init`
+
 ### Carthage installation
 
 Add this to your Cartfile: `github "twstokes/swift-gfx-wrapper"`
