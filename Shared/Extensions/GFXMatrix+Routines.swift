@@ -27,7 +27,7 @@ extension GFXMatrix {
         verticalOffset: Int = 0
     ) {
         setTextWrap(false)
-        setTextSize(1)
+        setTextSize(size)
         
         if let font = font {
             setFont(font)
