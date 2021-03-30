@@ -1,6 +1,4 @@
-# swift-gfx-wrapper
-
-This is currently a WIP.
+# SwiftGFXWrapper
 
 <img src="Media/playground.png" width="800" />
 
