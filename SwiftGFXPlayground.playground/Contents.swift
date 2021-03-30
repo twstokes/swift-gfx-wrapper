@@ -4,7 +4,6 @@ import PlaygroundSupport
 
 import SwiftGFXWrapper
 
-private let vm = BoardViewModel(rows: 16, cols: 32)
 
 struct ContentView: View {
     var body: some View {
