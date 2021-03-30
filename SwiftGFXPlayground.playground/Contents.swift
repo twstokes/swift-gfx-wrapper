@@ -17,19 +17,26 @@ struct ContentView: View {
         .onAppear {
             let matrix = vm.matrix
             
+            // set up some mutable variables
             var x = 0
             var y = 0
             var addingX = false
             var addingY = false
             
+            // this is our frame loop
             matrix.setFrameBlock {
+                // blank the screen on every frame
                 matrix.fillScreen(0)
+                
+                // draw a single pixel
                 matrix.drawPixel(x, y: y, color: UIColor.green.to565())
                 
+                // reverse direction if we exceed bounds
                 if x >= matrix.width() - 1 || x <= 0 {
                     addingX.toggle()
                 }
                 
+                // reverse direction if we exceed bounds
                 if y >= matrix.height() - 1 || y <= 0 {
                     addingY.toggle()
                 }
