@@ -2,7 +2,7 @@
 
 This is currently a WIP.
 
-<img src="Media/screen.png" width="300" />
+<img src="Media/playground.png" width="800" />
 
 ## What is this?
 
@@ -16,16 +16,16 @@ This is a Swift -> Objective C -> C / C++ wrapper around the [Adafruit GFX libra
 
 ## Getting started
 
-An example project is included in this library to get started. SwiftUI is optional. Anything that can observe changes to pixels will work. `GFXMatrix` can be subclassed to fit your needs.
+### Initialize Git submodules
+Install the Adafruit GFX Library by running: `git submodule update --init`
+
+A Swift Playground and an example project are included in this library to get started. SwiftUI is optional. Anything that can observe changes to pixels will work. `GFXMatrix` can be subclassed to fit your needs.
 
 ## Supported platforms
 
 - iOS 14.1+
 - macOS 11+
 - watchOS 7.2+
-
-### Initialize Git submodules
-`git submodule update --init`
 
 ### Carthage installation
 
