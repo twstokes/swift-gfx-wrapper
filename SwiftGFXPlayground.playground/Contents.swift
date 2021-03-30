@@ -10,7 +10,7 @@ struct ContentView: View {
         ZStack {
             Color.black
             BoardView()
-        }.frame(width: 400, height: 200)
+        }.frame(width: 400, height: 400)
     }
 }
 
