@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftGFXPlayground.playground">
+   </FileRef>
+   <FileRef
       location = "group:SwiftGFXWrapperExample/SwiftGFXWrapperExample.xcodeproj">
    </FileRef>
    <FileRef
