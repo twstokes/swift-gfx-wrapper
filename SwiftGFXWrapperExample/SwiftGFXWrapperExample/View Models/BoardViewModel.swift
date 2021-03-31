@@ -39,14 +39,13 @@ class BoardViewModel {
         
         // set the function that's fired on every pixel draw
         matrix.setDrawCallback { [self] x, y, color in
-            guard let dot = matrix.buffer.first(where: { $0.x == x && $0.y == y}) else {
+            guard let dot = matrix.buffer.first(
+                    where: { $0.x == x && $0.y == y && $0.color != color }
+            ) else {
                 return
             }
            
-            // increase performance by doing minimal work
-            if dot.color != color && color != 0 {
-               dot.color = color
-            }
+            dot.color = color
         }
         
         // use a frame driver to handle the timing of each frame
