@@ -1,7 +1,5 @@
 import SwiftUI
 
-import SwiftGFXWrapper
-
 struct PixelView: View {
     @ObservedObject var pixel: Pixel
 
