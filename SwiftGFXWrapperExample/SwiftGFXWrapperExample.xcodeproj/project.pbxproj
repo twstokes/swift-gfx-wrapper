@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C332C1482614E9F6006DAEF4 /* ExampleMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332C1472614E9F6006DAEF4 /* ExampleMatrix.swift */; };
 		C3CF3BA825EC281A001EDA01 /* SwiftGFXWrapperExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF3BA725EC281A001EDA01 /* SwiftGFXWrapperExampleApp.swift */; };
 		C3CF3BAA25EC281A001EDA01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF3BA925EC281A001EDA01 /* ContentView.swift */; };
 		C3CF3BAC25EC281A001EDA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3CF3BAB25EC281A001EDA01 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C332C1472614E9F6006DAEF4 /* ExampleMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMatrix.swift; sourceTree = "<group>"; };
 		C3A7F15B25FE941A009BD84B /* SwiftGFXWrapperExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftGFXWrapperExample.entitlements; sourceTree = "<group>"; };
 		C3CF3BA425EC281A001EDA01 /* SwiftGFXWrapperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGFXWrapperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CF3BA725EC281A001EDA01 /* SwiftGFXWrapperExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGFXWrapperExampleApp.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		C3E7B5202610C425007DE830 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C332C1472614E9F6006DAEF4 /* ExampleMatrix.swift */,
 				C3E7B4EE260FDBE8007DE830 /* Pixel.swift */,
 			);
 			path = Models;
@@ -210,6 +213,7 @@
 				C3CF3BA825EC281A001EDA01 /* SwiftGFXWrapperExampleApp.swift in Sources */,
 				C3E7B4EF260FDBE8007DE830 /* Pixel.swift in Sources */,
 				C3CF3BC825EC2843001EDA01 /* BoardViewModel.swift in Sources */,
+				C332C1482614E9F6006DAEF4 /* ExampleMatrix.swift in Sources */,
 				C3CF3BCA25EC2843001EDA01 /* BoardView.swift in Sources */,
 				C3CF3BC925EC2843001EDA01 /* PixelView.swift in Sources */,
 			);
