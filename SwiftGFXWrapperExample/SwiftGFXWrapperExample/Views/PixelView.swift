@@ -15,7 +15,7 @@ struct PixelView: View {
 
 struct PixelView_Previews: PreviewProvider {
     static let pixel: Pixel = {
-        let p = Pixel()
+        let p = Pixel(x: 0, y: 0)
         p.color = Color.red.to565()
         return p
     }()

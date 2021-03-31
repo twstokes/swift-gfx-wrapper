@@ -3,10 +3,21 @@ import UIKit
 
 import SwiftGFXWrapper
 
-struct BoardViewModel {
-    private let matrix: GFXMatrix
-    private let buffer: [Pixel]
+class ExampleMatrix: GFXMatrix {
+    var buffer = Set<Pixel>()
     
+    override func fillScreen(_ c: Int32) {
+        // a performance optimized version of fillScreen
+        // for our application
+        buffer
+            .filter { $0.color != Int(c) }
+            .forEach { $0.color = Int(c) }
+    }
+}
+
+class BoardViewModel {
+    private let matrix: ExampleMatrix
+        
     var rows: Int {
         matrix.height()
     }
@@ -16,20 +27,26 @@ struct BoardViewModel {
     }
     
     init(rows: Int, cols: Int) {
-        // a buffer to track our pixel state
-        buffer = (0..<cols*rows).map { _ in Pixel() }
-        
         // create a new matrix
-        matrix = GFXMatrix(rows: rows, cols: cols)
+        matrix = ExampleMatrix(rows: rows, cols: cols)
+        
+        // a buffer to track our pixel state
+        for r in 0..<rows {
+            for c in 0..<cols {
+                matrix.buffer.insert(Pixel(x: c, y: r))
+            }
+        }
         
         // set the function that's fired on every pixel draw
         matrix.setDrawCallback { [self] x, y, color in
-           let dot = buffer[x + y * cols]
+            guard let dot = matrix.buffer.first(where: { $0.x == x && $0.y == y}) else {
+                return
+            }
            
-           // increase performance by doing minimal work
-           if dot.color != color {
+            // increase performance by doing minimal work
+            if dot.color != color && color != 0 {
                dot.color = color
-           }
+            }
         }
         
         // use a frame driver to handle the timing of each frame
@@ -48,13 +65,7 @@ struct BoardViewModel {
     }
     
     func getPixelAt(row: Int, col: Int) -> Pixel? {
-        let idx = row*matrix.width() + col
-        
-        guard buffer.indices.contains(idx) else {
-            return nil
-        }
-
-        return buffer[idx]
+        return matrix.buffer.first(where: { $0.x == col && $0.y == row })
     }
     
     private func bouncyBox() {
@@ -63,7 +74,7 @@ struct BoardViewModel {
         var addingX = false
         var addingY = false
         
-        matrix.setFrameBlock {
+        matrix.setFrameBlock { [unowned self] in
             matrix.fillScreen(0)
             matrix.drawPixel(x, y: y, color: UIColor.green.to565())
             

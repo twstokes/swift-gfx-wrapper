@@ -3,7 +3,7 @@ import SwiftUI
 import SwiftGFXWrapper
 
 struct BoardView: View {
-    private let vm = BoardViewModel(rows: 16, cols: 32)
+    private let vm = BoardViewModel(rows: 64, cols: 64)
 
     var body: some View {
         GeometryReader { geo in
