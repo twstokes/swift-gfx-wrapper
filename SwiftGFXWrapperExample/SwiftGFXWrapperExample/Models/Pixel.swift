@@ -13,13 +13,10 @@ class Pixel: ObservableObject, Identifiable, Hashable {
     }
     
     static func == (lhs: Pixel, rhs: Pixel) -> Bool {
-        lhs.id == rhs.id //&& lhs.color == rhs.color && lhs.x == rhs.x && lhs.y == rhs.y
+        lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-//        hasher.combine(color)
-//        hasher.combine(x)
-//        hasher.combine(y)
     }
 }
