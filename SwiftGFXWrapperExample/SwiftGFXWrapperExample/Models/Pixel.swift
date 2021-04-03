@@ -1,7 +1,7 @@
 import Foundation
 
 /// Observable pixel drawn by a GFXMatrix.
-class Pixel: ObservableObject, Identifiable, Hashable, Equatable {
+class Pixel: ObservableObject, Identifiable, Hashable {
     @Published var color: Int = 0
     
     let x: Int
@@ -13,13 +13,13 @@ class Pixel: ObservableObject, Identifiable, Hashable, Equatable {
     }
     
     static func == (lhs: Pixel, rhs: Pixel) -> Bool {
-        lhs.id == rhs.id && lhs.color == rhs.color && lhs.x == rhs.x && lhs.y == rhs.y
+        lhs.id == rhs.id //&& lhs.color == rhs.color && lhs.x == rhs.x && lhs.y == rhs.y
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        hasher.combine(color)
-        hasher.combine(x)
-        hasher.combine(y)
+//        hasher.combine(color)
+//        hasher.combine(x)
+//        hasher.combine(y)
     }
 }
