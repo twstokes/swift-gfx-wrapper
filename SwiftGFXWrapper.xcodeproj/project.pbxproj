@@ -19,7 +19,7 @@
 		C3456FF925A27BED00618271 /* Print.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.h */; };
 		C3456FFA25A27BED00618271 /* WString.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD446E25A2641D0079D69E /* WString.h */; };
 		C3456FFD25A27BFB00618271 /* gfxfont.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443025A2641A0079D69E /* gfxfont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3456FFE25A27BFB00618271 /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; };
+		C3456FFE25A27BFB00618271 /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C3456FFF25A27BFB00618271 /* Adafruit_GFX.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443125A2641A0079D69E /* Adafruit_GFX.h */; };
 		C345700025A27BFB00618271 /* Adafruit_GFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443525A2641A0079D69E /* Adafruit_GFX.cpp */; };
 		C345700325A27C0700618271 /* FreeMonoOblique24pt7b.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD445D25A2641A0079D69E /* FreeMonoOblique24pt7b.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,7 +103,7 @@
 		C37A753125EAD8A9008F249E /* Print.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.h */; };
 		C37A753225EAD8A9008F249E /* WString.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD446E25A2641D0079D69E /* WString.h */; };
 		C37A753325EAD8A9008F249E /* Print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD446F25A2641D0079D69E /* Print.cpp */; };
-		C37A753925EAD8B7008F249E /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; };
+		C37A753925EAD8B7008F249E /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C37A753B25EAD8B7008F249E /* Adafruit_GFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443525A2641A0079D69E /* Adafruit_GFX.cpp */; };
 		C37A753C25EAD8B7008F249E /* Adafruit_GFX.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443125A2641A0079D69E /* Adafruit_GFX.h */; };
 		C37A753D25EAD8B7008F249E /* gfxfont.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443025A2641A0079D69E /* gfxfont.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -173,7 +173,7 @@
 		C39F753625EC11D200B9EACA /* Print.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD447125A2641D0079D69E /* Print.h */; };
 		C39F753C25EC11D800B9EACA /* gfxfont.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443025A2641A0079D69E /* gfxfont.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C39F754725EC11DE00B9EACA /* Adafruit_GFX.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD443125A2641A0079D69E /* Adafruit_GFX.h */; };
-		C39F754D25EC11E400B9EACA /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; };
+		C39F754D25EC11E400B9EACA /* glcdfont.c in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443425A2641A0079D69E /* glcdfont.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C39F755325EC11E800B9EACA /* Adafruit_GFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3AD443525A2641A0079D69E /* Adafruit_GFX.cpp */; };
 		C39F755925EC11ED00B9EACA /* FreeMonoBoldOblique24pt7b.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD445425A2641A0079D69E /* FreeMonoBoldOblique24pt7b.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C39F755A25EC11ED00B9EACA /* FreeSansOblique18pt7b.h in Headers */ = {isa = PBXBuildFile; fileRef = C3AD445125A2641A0079D69E /* FreeSansOblique18pt7b.h */; settings = {ATTRIBUTES = (Public, ); }; };
