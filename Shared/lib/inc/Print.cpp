@@ -75,7 +75,7 @@ size_t Print::print(long n, int base)
     return write(n);
   } else if (base == 10) {
     if (n < 0) {
-      int t = print('-');
+      int t = int(print('-'));
       n = -n;
       return printNumber(n, 10) + t;
     }
