@@ -16,9 +16,9 @@ extension UIColor: Colorable {
     }
     
     public convenience init(_ int565: Int) {
-        let r = Int(int565 & 0xF800) >> 11
-        let g = Int(int565 & 0x7E0) >> 5
-        let b = Int(int565 & 0x1F)
+        let r = (int565 & 0xF800) >> 11
+        let g = (int565 & 0x7E0) >> 5
+        let b = (int565 & 0x1F)
         
         self.init(red: CGFloat(r) / 31, green: CGFloat(g) / 63, blue: CGFloat(b) / 31, alpha: 1)
     }
