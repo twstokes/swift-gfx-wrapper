@@ -4,7 +4,7 @@ VirtualDotMatrix::VirtualDotMatrix(int16_t mW, int16_t mH, bool useBuffer)
     : Adafruit_GFX(mW, mH), buffer(NULL), drawPixelCallback(NULL), swiftBoard(NULL) {
         if (useBuffer) {
             // initialize an internal pixel buffer
-            buffer = new int16_t[mW * mH];
+            buffer = new uint16_t[mW * mH];
         }
 }
 

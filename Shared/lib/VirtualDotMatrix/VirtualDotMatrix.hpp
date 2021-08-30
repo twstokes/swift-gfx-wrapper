@@ -26,7 +26,7 @@ public:
     uint16_t getPixel(int16_t x, int16_t y);
 
 private:
-    int16_t *buffer;
+    uint16_t *buffer;
     DrawPixelCallback drawPixelCallback;
     const void *swiftBoard;
 };
