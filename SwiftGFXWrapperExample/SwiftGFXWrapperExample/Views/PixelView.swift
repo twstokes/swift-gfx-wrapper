@@ -5,7 +5,7 @@ struct PixelView: View {
 
     var body: some View {
         Rectangle()
-            .fill(Color(pixel.color))
+            .fill(pixel.color)
             .border(Color.gray.opacity(0.3))
             .scaledToFit()
     }
@@ -14,7 +14,7 @@ struct PixelView: View {
 struct PixelView_Previews: PreviewProvider {
     static let pixel: Pixel = {
         let p = Pixel()
-        p.color = Color.red.to565()
+        p.color = Color.red
         return p
     }()
     

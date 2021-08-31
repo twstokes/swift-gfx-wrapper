@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import UIKit
 
 import SwiftGFXWrapper
@@ -24,12 +25,13 @@ struct BoardViewModel {
         
         // set the function that's fired on every pixel draw
         matrix.setDrawCallback { [self] x, y, color in
-           let dot = buffer[x + y * cols]
+            let dot = buffer[x + y * cols]
+            let color = Color(color)
            
-           // increase performance by doing minimal work
-           if dot.color != color {
+            // increase performance by doing minimal work
+            if dot.color != color {
                dot.color = color
-           }
+            }
         }
         
         // use a frame driver to handle the timing of each frame
