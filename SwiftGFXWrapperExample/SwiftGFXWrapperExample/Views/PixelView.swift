@@ -6,8 +6,6 @@ struct PixelView: View {
     var body: some View {
         Rectangle()
             .fill(pixel.color)
-            .border(Color.gray.opacity(0.3))
-            .scaledToFit()
     }
 }
 
