@@ -16,7 +16,7 @@ open class GFXMatrix: VirtualDotMatrixWrapper {
     private var drawCallback: DrawCallback?
     
     public init(rows: Int, cols: Int) {
-        super.init(cols, height: rows)
+        super.init(cols, height: rows, useBuffer: true)
         
         // since we can't capture context with closures passed to C,
         // we have to pass a `const void *` that is a pointer to this object (selfPtr)

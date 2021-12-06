@@ -37,7 +37,13 @@ void VirtualDotMatrix::drawPixel(int16_t x, int16_t y, uint16_t color)
         return;
     }
 
+    // using a buffer can impact performance positively by doing quick lookups
     if (buffer != NULL) {
+        if (buffer[y*width() + x] == color) {
+            // nothing changed, early return
+            return;
+        }
+
         buffer[y*width() + x] = color;
     }
 

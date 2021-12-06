@@ -6,7 +6,7 @@ import SwiftGFXWrapper
 
 struct BoardViewModel {
     private let matrix: GFXMatrix
-    private let buffer: [Pixel]
+    private let pixels: [Pixel]
     
     var rows: Int {
         matrix.height()
@@ -18,20 +18,14 @@ struct BoardViewModel {
     
     init(rows: Int, cols: Int) {
         // a buffer to track our pixel state
-        buffer = (0..<cols*rows).map { _ in Pixel() }
+        pixels = (0..<cols*rows).map { _ in Pixel() }
         
         // create a new matrix
         matrix = GFXMatrix(rows: rows, cols: cols)
         
         // set the function that's fired on every pixel draw
         matrix.setDrawCallback { [self] x, y, color in
-            let dot = buffer[x + y * cols]
-            let color = Color(color)
-           
-            // increase performance by doing minimal work
-            if dot.color != color {
-               dot.color = color
-            }
+            pixels[x + y * cols].color = Color(color)
         }
         
         // use a frame driver to handle the timing of each frame
@@ -52,11 +46,11 @@ struct BoardViewModel {
     func getPixelAt(row: Int, col: Int) -> Pixel? {
         let idx = row*matrix.width() + col
         
-        guard buffer.indices.contains(idx) else {
+        guard pixels.indices.contains(idx) else {
             return nil
         }
 
-        return buffer[idx]
+        return pixels[idx]
     }
     
     private func bouncyBox() {
@@ -68,11 +62,11 @@ struct BoardViewModel {
         matrix.setFrameBlock {
             matrix.fillScreen(0)
             matrix.drawPixel(x, y: y, color: UIColor.green.to565())
-            
+
             if x >= matrix.width() - 1 || x <= 0 {
                 addingX.toggle()
             }
-            
+
             if y >= matrix.height() - 1 || y <= 0 {
                 addingY.toggle()
             }
