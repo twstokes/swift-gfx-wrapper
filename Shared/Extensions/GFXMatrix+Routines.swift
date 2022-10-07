@@ -2,7 +2,7 @@ extension GFXMatrix {
     // MARK: Graphics routines
     
     /// Flip back and forth all pixels between off and full brightness.
-    open func flipFlop() {
+    public func flipFlop() {
         var flipped = false
         
         setFrameBlock { [unowned self] in
@@ -19,7 +19,7 @@ extension GFXMatrix {
     ///   - size: Font size.
     ///   - color: Color to use.
     ///   - verticalOffset: Vertical offset from middle.
-    open func scrollText(
+    public func scrollText(
         text: String,
         font: Font? = nil,
         size: Int = 1,

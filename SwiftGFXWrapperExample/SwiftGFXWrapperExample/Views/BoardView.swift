@@ -10,9 +10,9 @@ struct BoardView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: geo.size.width * BoardView.spacing) {
-                ForEach((0..<vm.rows)) { row in
+                ForEach((0..<vm.rows), id: \.self) { row in
                     HStack(spacing: geo.size.width * BoardView.spacing) {
-                        ForEach((0..<vm.cols)) { col in
+                        ForEach((0..<vm.cols), id: \.self) { col in
                             if let pixel = vm.getPixelAt(row: row, col: col) {
                                 PixelView(pixel: pixel)
                             }
