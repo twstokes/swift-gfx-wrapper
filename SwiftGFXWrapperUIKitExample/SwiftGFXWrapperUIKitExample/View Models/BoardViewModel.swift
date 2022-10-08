@@ -5,6 +5,7 @@ import SwiftGFXWrapper
 
 struct BoardViewModel {
     private let matrix: GFXMatrix
+    private let bufferCallback: (([Pixel]) -> ())
     var pixels: [Pixel]
     
     var rows: Int {
@@ -15,9 +16,10 @@ struct BoardViewModel {
         matrix.width()
     }
     
-    init(rows: Int, cols: Int) {
+    init(rows: Int, cols: Int, bufferCallback: @escaping (([Pixel]) -> ())) {
         // a buffer to track our pixel state
         pixels = (0..<cols*rows).map { _ in Pixel() }
+        self.bufferCallback = bufferCallback
         
         // create a new matrix
         matrix = GFXMatrix(rows: rows, cols: cols)
@@ -30,7 +32,7 @@ struct BoardViewModel {
         // use a frame driver to handle the timing of each frame
         let driver = DisplayLinkDriver()
         // tell the driver what function to call on every frame step
-        driver.setStepBlock(matrix.step)
+        driver.setStepBlock(step)
 
         // example of an included graphics routine to scroll text
         matrix.scrollText(text: "Hello!", color: UIColor.orange)
@@ -40,6 +42,11 @@ struct BoardViewModel {
         
         // start the driver
         driver.start()
+    }
+
+    func step() {
+        matrix.step()
+        bufferCallback(pixels)
     }
     
     func getPixelAt(row: Int, col: Int) -> Pixel? {

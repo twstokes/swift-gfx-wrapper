@@ -15,7 +15,23 @@
 		C320ADD528F200F200AB4EC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C320ADD328F200F200AB4EC9 /* LaunchScreen.storyboard */; };
 		C320ADE128F2013000AB4EC9 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320ADE028F2012F00AB4EC9 /* BoardViewModel.swift */; };
 		C320ADE328F2014400AB4EC9 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320ADE228F2014400AB4EC9 /* Pixel.swift */; };
+		C320ADE628F2065200AB4EC9 /* SwiftGFXWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */; };
+		C320ADE728F2065200AB4EC9 /* SwiftGFXWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C320ADE828F2065200AB4EC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C320ADE728F2065200AB4EC9 /* SwiftGFXWrapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C320ADC528F200F100AB4EC9 /* SwiftGFXWrapperUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGFXWrapperUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +44,7 @@
 		C320ADD628F200F200AB4EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C320ADE028F2012F00AB4EC9 /* BoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		C320ADE228F2014400AB4EC9 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
+		C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftGFXWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C320ADE628F2065200AB4EC9 /* SwiftGFXWrapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +64,7 @@
 			children = (
 				C320ADC728F200F100AB4EC9 /* SwiftGFXWrapperUIKitExample */,
 				C320ADC628F200F100AB4EC9 /* Products */,
+				C320ADE428F2065200AB4EC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +124,14 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		C320ADE428F2065200AB4EC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +142,7 @@
 				C320ADC128F200F100AB4EC9 /* Sources */,
 				C320ADC228F200F100AB4EC9 /* Frameworks */,
 				C320ADC328F200F100AB4EC9 /* Resources */,
+				C320ADE828F2065200AB4EC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -310,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
