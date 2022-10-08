@@ -13,6 +13,8 @@
 		C320ADD028F200F100AB4EC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C320ADCE28F200F100AB4EC9 /* Main.storyboard */; };
 		C320ADD228F200F200AB4EC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C320ADD128F200F200AB4EC9 /* Assets.xcassets */; };
 		C320ADD528F200F200AB4EC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C320ADD328F200F200AB4EC9 /* LaunchScreen.storyboard */; };
+		C320ADE128F2013000AB4EC9 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320ADE028F2012F00AB4EC9 /* BoardViewModel.swift */; };
+		C320ADE328F2014400AB4EC9 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320ADE228F2014400AB4EC9 /* Pixel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C320ADD128F200F200AB4EC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C320ADD428F200F200AB4EC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C320ADD628F200F200AB4EC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C320ADE028F2012F00AB4EC9 /* BoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		C320ADE228F2014400AB4EC9 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		C320ADC728F200F100AB4EC9 /* SwiftGFXWrapperUIKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				C320ADDF28F2012200AB4EC9 /* View Controllers */,
+				C320ADDE28F2011900AB4EC9 /* View Models */,
+				C320ADDD28F2010D00AB4EC9 /* Views */,
+				C320ADDC28F2010900AB4EC9 /* Models */,
 				C320ADC828F200F100AB4EC9 /* AppDelegate.swift */,
 				C320ADCA28F200F100AB4EC9 /* SceneDelegate.swift */,
-				C320ADCC28F200F100AB4EC9 /* ViewController.swift */,
 				C320ADCE28F200F100AB4EC9 /* Main.storyboard */,
 				C320ADD128F200F200AB4EC9 /* Assets.xcassets */,
 				C320ADD328F200F200AB4EC9 /* LaunchScreen.storyboard */,
 				C320ADD628F200F200AB4EC9 /* Info.plist */,
 			);
 			path = SwiftGFXWrapperUIKitExample;
+			sourceTree = "<group>";
+		};
+		C320ADDC28F2010900AB4EC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C320ADE228F2014400AB4EC9 /* Pixel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C320ADDD28F2010D00AB4EC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C320ADDE28F2011900AB4EC9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				C320ADE028F2012F00AB4EC9 /* BoardViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		C320ADDF28F2012200AB4EC9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C320ADCC28F200F100AB4EC9 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +178,9 @@
 			files = (
 				C320ADCD28F200F100AB4EC9 /* ViewController.swift in Sources */,
 				C320ADC928F200F100AB4EC9 /* AppDelegate.swift in Sources */,
+				C320ADE328F2014400AB4EC9 /* Pixel.swift in Sources */,
 				C320ADCB28F200F100AB4EC9 /* SceneDelegate.swift in Sources */,
+				C320ADE128F2013000AB4EC9 /* BoardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
