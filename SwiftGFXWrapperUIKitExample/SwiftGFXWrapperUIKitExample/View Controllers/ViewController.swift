@@ -1,12 +1,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private let vm = BoardViewModel(rows: 64, cols: 64) { buffer in
-        print("Got pixel buffer: \(buffer.count)")
+    private var boardView: BoardView?
+
+    lazy var vm = BoardViewModel(rows: 32, cols: 32) {[weak self] buffer in
+        guard let self = self else { return }
+        self.drawBuffer(buffer: buffer)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let boardView = BoardView(rows: vm.rows, cols: vm.cols)
+        boardView.frame.size = boardView.sizeThatFits(view.frame.size)
+
+        self.boardView = boardView
+        view.addSubview(boardView)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -14,7 +23,8 @@ class ViewController: UIViewController {
     }
 
     private func drawBuffer(buffer: [Pixel]) {
-        print("Drawing a buffer!")
+        print("Got pixel buffer: \(buffer.count)")
+        boardView?.updateBoard(pixels: buffer)
     }
 }
 

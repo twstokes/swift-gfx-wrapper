@@ -17,6 +17,7 @@
 		C320ADE328F2014400AB4EC9 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320ADE228F2014400AB4EC9 /* Pixel.swift */; };
 		C320ADE628F2065200AB4EC9 /* SwiftGFXWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */; };
 		C320ADE728F2065200AB4EC9 /* SwiftGFXWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C320ADEA28F207AE00AB4EC9 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C320ADE928F207AE00AB4EC9 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		C320ADE028F2012F00AB4EC9 /* BoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		C320ADE228F2014400AB4EC9 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		C320ADE528F2065200AB4EC9 /* SwiftGFXWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftGFXWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C320ADE928F207AE00AB4EC9 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		C320ADDD28F2010D00AB4EC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C320ADE928F207AE00AB4EC9 /* BoardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C320ADCD28F200F100AB4EC9 /* ViewController.swift in Sources */,
 				C320ADC928F200F100AB4EC9 /* AppDelegate.swift in Sources */,
 				C320ADE328F2014400AB4EC9 /* Pixel.swift in Sources */,
+				C320ADEA28F207AE00AB4EC9 /* BoardView.swift in Sources */,
 				C320ADCB28F200F100AB4EC9 /* SceneDelegate.swift in Sources */,
 				C320ADE128F2013000AB4EC9 /* BoardViewModel.swift in Sources */,
 			);
