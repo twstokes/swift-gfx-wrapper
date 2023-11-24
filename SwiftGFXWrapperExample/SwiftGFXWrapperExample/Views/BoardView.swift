@@ -1,29 +1,22 @@
 import SwiftUI
 
 import SwiftGFXWrapper
+import SpriteKit
 
 struct BoardView: View {
-    static private let rows = 16, cols = 32
-    static private let spacing = 0.002
+    static private let rows = 100, cols = 100
     private let vm = BoardViewModel(rows: rows, cols: cols)
 
+    var scene: BoardScene {
+        let scene = BoardScene(size: CGSize(width: BoardView.cols, height: BoardView.rows))
+        scene.vm = vm
+        return scene
+    }
+
     var body: some View {
-        GeometryReader { geo in
-            VStack(spacing: geo.size.width * BoardView.spacing) {
-                ForEach((0..<vm.rows), id: \.self) { row in
-                    HStack(spacing: geo.size.width * BoardView.spacing) {
-                        ForEach((0..<vm.cols), id: \.self) { col in
-                            if let pixel = vm.getPixelAt(row: row, col: col) {
-                                PixelView(pixel: pixel)
-                            }
-                        }
-                    }
-                }
-            }.background(Color.gray.opacity(0.3))
-        }.aspectRatio(
-            .init(width: BoardView.cols, height: BoardView.rows),
-            contentMode: .fit
-        )
+        SpriteView(scene: scene, preferredFramesPerSecond: 10)
+            .aspectRatio(CGSize(width: BoardView.cols, height: BoardView.rows), contentMode: .fit)
+            .ignoresSafeArea()
     }
 }
 
@@ -33,3 +26,39 @@ struct BoardView_Previews: PreviewProvider {
     }
 }
 
+class BoardScene: SKScene {
+    private let node: SKSpriteNode
+    var vm: BoardViewModel?
+
+    override init(size: CGSize) {
+        node = BoardScene.createNode(size: size)
+        super.init(size: size)
+        anchorPoint = .init(x: 0.5, y: 0.5)
+        addChild(node)
+        scaleMode = .fill
+    }
+
+    private static func createNode(size: CGSize) -> SKSpriteNode {
+        let node = SKSpriteNode(color: .black, size: size)
+        return node
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func recieveBuffer(_ pixels: [PixelData]) {
+        let bytes = pixels.flatMap { $0.bytes }
+        let data = Data(bytes)
+        let texture = SKTexture(data: data, size: size, flipped: true)
+        texture.filteringMode = .nearest
+        node.texture = texture
+    }
+
+    override func update(_ currentTime: TimeInterval) {
+        super.update(currentTime)
+        if let pixels = vm?.generateFrame() {
+            recieveBuffer(pixels)
+        }
+    }
+}

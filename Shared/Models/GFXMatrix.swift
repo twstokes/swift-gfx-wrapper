@@ -4,7 +4,7 @@ import Foundation
 open class GFXMatrix: VirtualDotMatrixWrapper {
     // callback signature used to retrieve pixel writes from the Adafruit GFX Library
     public typealias DrawCallback = (_ x: Int, _ y: Int, _ color: Int) -> Void
-    
+
     // block to be fired for a single complete frame
     // this can be replaced while the matrix is running
     // to present new sequences
