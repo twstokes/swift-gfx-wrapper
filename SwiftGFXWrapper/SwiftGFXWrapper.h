@@ -10,5 +10,5 @@ FOUNDATION_EXPORT const unsigned char SwiftGFXWrapperVersionString[];
 // since we don't have the PROGMEM Arduino functions
 #define PROGMEM
 
-#import "VirtualDotMatrixWrapper.h"
-#import "Fonts.h"
+#import <SwiftGFXWrapper/VirtualDotMatrixWrapper.h>
+#import <SwiftGFXWrapper/Fonts.h>

@@ -35,9 +35,9 @@ The example code covers:
 
 ## Supported platforms
 
-- iOS 14.1+
-- macOS 11+
-- watchOS 7.2+
+- iOS 17+
+- macOS 14+
+- watchOS 10+
 
 ### Carthage installation
 
