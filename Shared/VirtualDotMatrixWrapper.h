@@ -3,8 +3,8 @@
 #endif /* VirtualDotMatrixWrapper_h */
 
 #import <Foundation/Foundation.h>
-#import "gfxfont.h"
-#import "Fonts.h"
+#import <SwiftGFXWrapper/gfxfont.h>
+#import <SwiftGFXWrapper/Fonts.h>
 
 @interface VirtualDotMatrixWrapper : NSObject
 
