@@ -3,19 +3,25 @@ import SwiftUI
 import SwiftGFXWrapper
 
 struct BoardView: View {
-    static private let rows = 16, cols = 32
-    static private let spacing = 0.002
-    private let vm = BoardViewModel(rows: rows, cols: cols)
+    static private let rows = 14, cols = 28
+    @StateObject var vm = BoardViewModel(rows: rows, cols: cols)
 
     var body: some View {
         GeometryReader { geo in
-            VStack(spacing: geo.size.width * BoardView.spacing) {
-                ForEach((0..<vm.rows), id: \.self) { row in
-                    HStack(spacing: geo.size.width * BoardView.spacing) {
-                        ForEach((0..<vm.cols), id: \.self) { col in
-                            if let pixel = vm.getPixelAt(row: row, col: col) {
-                                PixelView(pixel: pixel)
-                            }
+            Canvas { context, size in
+                let cellSize = size.width / CGFloat(BoardView.cols)
+                let spacing = cellSize * 0.1
+
+                for row in 0..<vm.rows {
+                    for col in 0..<vm.cols {
+                        if let pixel = vm.getPixelAt(row: row, col: col) {
+                            let rect = CGRect(
+                                x: CGFloat(col) * cellSize,
+                                y: CGFloat(row) * cellSize,
+                                width: cellSize - spacing,
+                                height: cellSize - spacing
+                            )
+                            context.fill(Path(rect), with: .color(pixel))
                         }
                     }
                 }

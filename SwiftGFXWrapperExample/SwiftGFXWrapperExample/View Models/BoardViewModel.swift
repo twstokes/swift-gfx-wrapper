@@ -4,10 +4,12 @@ import UIKit
 
 import SwiftGFXWrapper
 
-struct BoardViewModel {
+class BoardViewModel: ObservableObject {
+    @Published var boardBuffer: [Color]
+
     private let matrix: GFXMatrix
-    private let pixels: [Pixel]
-    
+    private var pixels: [Color]
+
     var rows: Int {
         matrix.height()
     }
@@ -18,20 +20,26 @@ struct BoardViewModel {
     
     init(rows: Int, cols: Int) {
         // a buffer to track our pixel state
-        pixels = (0..<cols*rows).map { _ in Pixel() }
-        
+        pixels = (0..<cols*rows).map { _ in .black }
+        boardBuffer = pixels
+
         // create a new matrix
         matrix = GFXMatrix(rows: rows, cols: cols)
         
         // set the function that's fired on every pixel draw
         matrix.setDrawCallback { [self] x, y, color in
-            pixels[x + y * cols].color = Color(color)
+            pixels[x + y * cols] = Color(color)
         }
         
         // use a frame driver to handle the timing of each frame
         let driver = DisplayLinkDriver()
         // tell the driver what function to call on every frame step
-        driver.setStepBlock(matrix.step)
+        driver.setStepBlock {
+            self.matrix.step()
+            self.boardBuffer = self.pixels
+        }
+
+        driver.setFrameRate(fps: 10)
 
         // example of an included graphics routine to scroll text
         matrix.scrollText(text: "Hello!", color: UIColor.orange)
@@ -43,14 +51,14 @@ struct BoardViewModel {
         driver.start()
     }
     
-    func getPixelAt(row: Int, col: Int) -> Pixel? {
+    func getPixelAt(row: Int, col: Int) -> Color? {
         let idx = row*matrix.width() + col
         
-        guard pixels.indices.contains(idx) else {
-            return nil
-        }
+//        guard pixels.indices.contains(idx) else {
+//            return nil
+//        }
 
-        return pixels[idx]
+        return boardBuffer[idx]
     }
     
     private func bouncyBox() {
@@ -60,14 +68,14 @@ struct BoardViewModel {
         var addingY = false
         
         matrix.setFrameBlock {
-            matrix.fillScreen(0)
-            matrix.drawPixel(x, y: y, color: UIColor.green.to565())
+            self.matrix.fillScreen(0)
+            self.matrix.drawPixel(x, y: y, color: UIColor.green.to565())
 
-            if x >= matrix.width() - 1 || x <= 0 {
+            if x >= self.matrix.width() - 1 || x <= 0 {
                 addingX.toggle()
             }
 
-            if y >= matrix.height() - 1 || y <= 0 {
+            if y >= self.matrix.height() - 1 || y <= 0 {
                 addingY.toggle()
             }
             
