@@ -6,7 +6,7 @@ import SwiftGFXWrapper
 
 struct ContentView: View {
     private let vm = BoardViewModel(rows: 16, cols: 32)
-    
+
     var body: some View {
         ZStack {
             Color.black

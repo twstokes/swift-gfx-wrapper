@@ -7,7 +7,8 @@ import SwiftGFXWrapper
 class BoardViewModel: ObservableObject {
     @Published var boardBuffer: [Color]
 
-    private let matrix: GFXMatrix
+    // Public to make Playground access convenient
+    let matrix: GFXMatrix
     private var pixels: [Color]
 
     var rows: Int {
