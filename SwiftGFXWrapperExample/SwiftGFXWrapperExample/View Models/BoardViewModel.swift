@@ -39,31 +39,24 @@ class BoardViewModel: ObservableObject {
             self.boardBuffer = self.pixels
         }
 
-        driver.setFrameRate(fps: 10)
-
         // example of an included graphics routine to scroll text
         matrix.scrollText(text: "Hello!", color: UIColor.orange)
-        
+
         // example of a local graphics routine to manipulate the matrix
         // bouncyBox()
-        
+
         // start the driver
         driver.start()
     }
     
-    func getPixelAt(row: Int, col: Int) -> Color? {
+    func getPixelAt(row: Int, col: Int) -> Color {
         let idx = row*matrix.width() + col
-        
-//        guard pixels.indices.contains(idx) else {
-//            return nil
-//        }
-
         return boardBuffer[idx]
     }
     
     private func bouncyBox() {
-        var x = 0
-        var y = 0
+        var x = Int.random(in: 0..<matrix.width())
+        var y = Int.random(in: 0..<matrix.height())
         var addingX = false
         var addingY = false
         
