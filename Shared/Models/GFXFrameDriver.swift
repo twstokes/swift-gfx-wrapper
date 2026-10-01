@@ -4,7 +4,7 @@ import Foundation
 public protocol GFXFrameDriver {
     /// Block that's fired with each frame step.
     func setStepBlock(_ block: (() -> Void)?)
-    /// Frame rate to fire blocks.
+    /// Frame rate to fire blocks. Zero requests native display cadence.
     func setFrameRate(fps: Int)
     /// Start the driver.
     func start()

@@ -15,6 +15,14 @@
 - (id)init:(NSInteger)w height:(NSInteger)h;
 - (id)init:(NSInteger)w height:(NSInteger)h useBuffer:(BOOL)b;
 - (void) start:(const void *)selfPtr drawPixelCallback:(const void (short, short, unsigned short, const void *))drawPixelCallback;
+/// Disable per-pixel bridging when consuming complete frames instead.
+- (void)setDrawCallbacksEnabled:(BOOL)enabled;
+/// Owned snapshot in row-major RGBA8888 order; dimensions are width() by height().
+/// Access the matrix from one thread, including drawing and snapshotting.
+- (NSData *)rgbaFrame;
+/// Changes when drawing may have modified the buffer or its rotation.
+/// Repeated same-color drawPixel calls do not change this value.
+- (uint64_t)frameRevision;
 - (void) drawPixel:(NSInteger)x y:(NSInteger)y color:(NSInteger)c;
 - (NSInteger) getPixel:(NSInteger)x y:(NSInteger)y;
 - (void) print:(NSString *)s;
