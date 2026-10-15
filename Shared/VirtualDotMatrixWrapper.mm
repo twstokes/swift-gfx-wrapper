@@ -7,6 +7,8 @@
 @implementation VirtualDotMatrixWrapper
 {
     VirtualDotMatrix * _VirtualDotMatrix;
+    NSData *_rgbaSnapshot;
+    uint64_t _snapshotRevision;
 }
 
 
@@ -14,6 +16,9 @@
 /// @param w Width of matrix.
 /// @param h Height of matrix.
 -(id)init:(NSInteger)w height:(NSInteger)h {
+    if (w <= 0 || w > INT16_MAX || h <= 0 || h > INT16_MAX) {
+        [NSException raise:NSInvalidArgumentException format:@"Matrix dimensions must be between 1 and 32767"];
+    }
     self = [super init];
     if (self) {
         _VirtualDotMatrix = new VirtualDotMatrix(w, h, false);
@@ -27,6 +32,9 @@
 /// @param h Height of matrix.
 /// @param b Use a pixel buffer.
 -(id)init:(NSInteger)w height:(NSInteger)h useBuffer:(BOOL)b {
+    if (w <= 0 || w > INT16_MAX || h <= 0 || h > INT16_MAX) {
+        [NSException raise:NSInvalidArgumentException format:@"Matrix dimensions must be between 1 and 32767"];
+    }
     self = [super init];
     if (self) {
         _VirtualDotMatrix = new VirtualDotMatrix(w, h, b);
@@ -41,6 +49,7 @@
     @synchronized(self) {
         delete _VirtualDotMatrix;
         _VirtualDotMatrix = newVal;
+        _rgbaSnapshot = nil;
     }
 }
 
@@ -61,6 +70,26 @@
     _VirtualDotMatrix->start(selfPtr, drawPixelCallback);
 }
 
+
+- (void)setDrawCallbacksEnabled:(BOOL)enabled {
+    _VirtualDotMatrix->setDrawCallbacksEnabled(enabled);
+}
+
+- (uint64_t)frameRevision {
+    return _VirtualDotMatrix->frameRevision();
+}
+
+- (NSData *)rgbaFrame {
+    const uint64_t revision = _VirtualDotMatrix->frameRevision();
+    if (_rgbaSnapshot && _snapshotRevision == revision) return _rgbaSnapshot;
+    const size_t length = 4 * size_t(_VirtualDotMatrix->width()) * _VirtualDotMatrix->height();
+    void *bytes = malloc(length);
+    if (!bytes) [NSException raise:NSMallocException format:@"Unable to allocate matrix snapshot"];
+    _VirtualDotMatrix->copyRGBA(static_cast<uint8_t *>(bytes));
+    _rgbaSnapshot = [[NSData alloc] initWithBytesNoCopy:bytes length:length freeWhenDone:YES];
+    _snapshotRevision = revision;
+    return _rgbaSnapshot;
+}
 
 /// Draws a pixel on the matrix.
 /// @param x X coordinate.

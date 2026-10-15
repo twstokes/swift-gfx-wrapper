@@ -16,7 +16,11 @@ open class GFXMatrix: VirtualDotMatrixWrapper {
     private var drawCallback: DrawCallback?
 
     public init(rows: Int, cols: Int) {
+        precondition(rows > 0 && rows <= Int(Int16.max) && cols > 0 && cols <= Int(Int16.max),
+                     "Matrix dimensions must be between 1 and 32767")
         super.init(cols, height: rows, useBuffer: true)
+
+        setDrawCallbacksEnabled(false)
 
         // since we can't capture context with closures passed to C,
         // we have to pass a `const void *` that is a pointer to this object (selfPtr)
@@ -38,6 +42,7 @@ open class GFXMatrix: VirtualDotMatrixWrapper {
     // set to nil to clear the draw block
     public func setDrawCallback(_ block: DrawCallback?) {
         drawCallback = block
+        setDrawCallbacksEnabled(block != nil)
     }
 
     // set a new block to run when the frame is computed
